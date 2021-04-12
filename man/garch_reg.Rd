@@ -9,19 +9,23 @@ garch_reg(
   arch_order = NULL,
   garch_order = NULL,
   ar_order = NULL,
-  ma_order = NULL
+  ma_order = NULL,
+  tune_by = NULL
 )
 }
 \arguments{
 \item{mode}{A single character string for the type of model.}
 
-\item{arch_order}{An integer giving the order of the ARCH part for the variance model. Applies to both garch and rugarch engines.}
+\item{arch_order}{An integer giving the order of the ARCH part for the variance model.}
 
-\item{garch_order}{An integer giving the order of the GARCH part for the variance model. Applies to both garch and rugarch engines.}
+\item{garch_order}{An integer giving the order of the GARCH part for the variance model.}
 
-\item{ar_order}{An integer giving the order of the AR part for the mean model. Only applies to rugarch engine.}
+\item{ar_order}{An integer giving the order of the AR part for the mean model.}
 
-\item{ma_order}{An integer giving the order of the MA part for the mean model. Only applies to rugarch engine.
+\item{ma_order}{An integer giving the order of the MA part for the mean model.}
+
+\item{tune_by}{Default is set to NULL, when no tuning. If you want to tune, you must choose between "seriesFor" or "sigmaFor" options.
+This will cause the function to not return a nested tibble and be able to tune.
 
 These arguments are converted to their specific names at the
 time that the model is fit.
